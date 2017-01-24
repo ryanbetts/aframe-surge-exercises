@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Lesson 2: Measuring in Meters</title>
+    <script src="https://aframe.io/releases/0.4.0/aframe.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity id="football-stadium">
+        <a-plane id="grass-field"
+          height="109.1"
+          width="48.5"
+          color="green"
+          position="0 -0.01 0"
+          rotation="-90 0 0"></a-plane>
+        <a-entity id="home-upright" position="0 0 -50">
+          <a-plane color="magenta" width="5.64" height="0.3" position="0 3.05 0"></a-plane>
+          <a-plane color="magenta" width="0.3" height="6.1" position="-2.82 6.0 0"></a-plane>
+          <a-plane color="magenta" width="0.3" height="6.1" position="2.82 6.0 0"></a-plane>
+          <a-plane color="magenta" width="0.3" height="3.0" position="0 1.5 0"></a-plane>
+        </a-entity>
+        <a-plane id="center-field" color="white" height="0.5" width="48.5" rotation="-90 0 0"></a-plane>
+        <a-entity id="away-upright" position="0 0 50" rotation="0 180 0">
+          <a-plane color="cyan" width="5.64" height="0.3" position="0 3.05 0"></a-plane>
+          <a-plane color="cyan" width="0.3" height="6.1" position="-2.82 6.0 0"></a-plane>
+          <a-plane color="cyan" width="0.3" height="6.1" position="2.82 6.0 0"></a-plane>
+          <a-plane color="cyan" width="0.3" height="3.0" position="0 1.5 0"></a-plane>
+        </a-entity>
+        <!--
+        Exercise: Now that you understand that all the numbers/measurements are
+        in meters, let's move a football player around the field. The player is
+        currently at center of the field. Let's move him 10 meters towards the
+        home team's upright.
+
+        Now let's move him to the home team's endzone (50m away from the center line).
+
+        Now try moving him to the away team's endzone.
+
+        Note: did you notice that we place an <a-camera> object in this scene?
+        We did this so that we could change it's default location in the scene.
+        If you don't specify a camera, Aframe automatically places one at the
+        location "0 0 0".
+        -->
+        <a-collada-model
+          id="football-player"
+          src="assets/football-player/model.dae"
+          position="0 0 20"></a-collada-model>
+        <a-camera position="0 0 5"></a-camera>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

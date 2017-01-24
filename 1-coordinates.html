@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Lesson 1: Understanding the Coordinate System</title>
+    <script src="https://aframe.io/releases/0.4.0/aframe.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity id="traffic-light">
+        <a-plane id="background" height="2.5" width="1" color="black" position="0 1 -4"></a-plane>
+        <!--
+        Exercise: now that you've been taught about how Aframe uses a right-handed
+        coordinate system (ie. negative z-index values move things away from you)
+        try putting the traffic lights in the correct order:
+        red at the top
+        yellow in the middle
+        green at the bottom
+
+        The red light has been correctly positioned for you. Try to do this
+        directly with the code, as well as with Aframe inspector.
+
+        Note: see how there are "glitches" happening with the red light?
+        This is called "z fighting". You have two objects at the exact same
+        distance from the camera, so the engine isn't sure which one to put
+        in front. See if you can figure out a solution to this problem.
+        -->
+        <a-circle id="stop-light" color="red" radius="0.4" position="0 1.7 -4"></a-circle>
+        <a-circle id="slow-light" color="yellow" radius="0.4" position="2 0 4"></a-circle>
+        <a-circle id="go-light" color="green" radius="0.4" position="-4 -5 0"></a-circle>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
