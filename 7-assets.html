@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Lesson 7: Assets</title>
+    <script src="/assets/aframe-0.4.js"></script>
+  </head>
+  <body>
+    <!--
+      Now that we know how to load images and videos, you might start to
+      notice that bigger images and videos take a while to load.
+
+      Sometimes you don't want your scene to render until all the images,
+      videos, and other assets are available.
+
+      No problem. Aframe has something called the <a-assets/> component.
+      You can identify the assets to load, and refer to them by id elsewhere.
+      Aframe will take care of waiting until they are available before rendering
+      the scene.
+
+      This is also helpful if you want to use the same image in numerous places,
+      because you'll only have to change the image in one line.
+
+      You can only have one of these per scene.
+    -->
+    <a-scene>
+        <a-assets>
+          <img id="cage-image" src="/assets/cage.jpg"/>
+          <img id="aframe-logo-video" src="/assets/aframe-logo.mp4"/>
+        </a-assets>
+        <!-- <a-curvedimage src="/assets/cage.jpg"></a-curvedimage> -->
+        <a-image position="1 2 -2" src="#cage-image"></a-image>
+        <a-video position="-1 2 -2" src="#aframe-logo-video"></a-video>
+    </a-scene>
+  </body>
+</html>

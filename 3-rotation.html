@@ -1,50 +1,99 @@
 <html>
   <head>
     <title>Lesson 3: Rotation</title>
-    <script src="https://aframe.io/releases/0.4.0/aframe.js"></script>
+    <script src="/assets/aframe-0.4.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-entity id="football-stadium">
-        <a-plane id="grass-field"
-          height="109.1"
-          width="48.5"
-          color="green"
-          position="0 -0.01 0"
-          rotation="-90 0 0"></a-plane>
-        <a-entity id="home-upright" position="0 0 -50">
-          <a-plane color="magenta" width="5.64" height="0.3" position="0 3.05 0"></a-plane>
-          <a-plane color="magenta" width="0.3" height="6.1" position="-2.82 6.0 0"></a-plane>
-          <a-plane color="magenta" width="0.3" height="6.1" position="2.82 6.0 0"></a-plane>
-          <a-plane color="magenta" width="0.3" height="3.0" position="0 1.5 0"></a-plane>
+      <!--
+        Now lets take a look at rotation. Rotation is measured simply, using
+        degrees. There are 360° in a circle, as we all know. The trickier
+        part is learning to quickly pick the axis (x,y or z) that is appropriate
+        for the rotation you want to do, and then also which direction positive
+        and negative rotation is around that axis.
+
+        For this, we can refer back to the right-hand rule. Point your thumb
+        in the direction of the axis, and the curve of your fingers will tell
+        you which direction a positive rotation is.
+
+        But enough talk. Let's learn by doing.
+
+        Here we have a *very roughly scaled* model of the solar system.
+        With 8 planets, instead of the 9 we group up with, of course.
+
+        Sorry Pluto.
+
+        A couple of things don't seem to be right with this solar system though.
+
+        First: the planets are all perfectly aligned. Try spreading their orbits
+        around the sun.
+
+        Second: Saturn's rings don't look like they are at the right angle.
+
+        Third: how would you rotate the solar system so that we are looking
+        down on it instead?
+
+        Bonus: instead of rotating the solar system, see if you can achieve the
+        same result by positioning and moving the camera. 
+      -->
+      <a-entity id="solar-system" position="0 0 -150">
+        <a-sphere id="sun"
+          radius="40"
+          color="yellow"></a-sphere>
+        <a-entity id="mercury-orbit">
+          <a-sphere id="mercury"
+            radius="0.2"
+            position="0 0 45"
+            color="magenta"></a-sphere>
         </a-entity>
-        <a-plane id="center-field" color="white" height="0.5" width="48.5" rotation="-90 0 0"></a-plane>
-        <a-entity id="away-upright" position="0 0 50" rotation="0 180 0">
-          <a-plane color="cyan" width="5.64" height="0.3" position="0 3.05 0"></a-plane>
-          <a-plane color="cyan" width="0.3" height="6.1" position="-2.82 6.0 0"></a-plane>
-          <a-plane color="cyan" width="0.3" height="6.1" position="2.82 6.0 0"></a-plane>
-          <a-plane color="cyan" width="0.3" height="3.0" position="0 1.5 0"></a-plane>
+        <a-entity id="venus-orbit">
+          <a-sphere id="venus"
+            radius="0.4"
+            position="0 0 50"
+            color="red"></a-sphere>
         </a-entity>
-        <!--
-        Exercise: Now that you understand that all the numbers/measurements are
-        in meters, let's move a football player around the field. The player is
-        currently at center of the field. Let's move him 10 meters towards the
-        home team's upright.
-
-        Now let's move him to the home team's endzone (50m away from the center line).
-
-        Now try moving him to the away team's endzone.
-
-        Note: did you notice that we place an <a-camera> object in this scene?
-        We did this so that we could change it's default location in the scene.
-        If you don't specify a camera, Aframe automatically places one at the
-        location "0 0 0".
-        -->
-        <a-collada-model
-          id="football-player"
-          src="assets/football-player/model.dae"
-          position="0 0 20"></a-collada-model>
-        <a-camera position="0 0 5"></a-camera>
+        <a-entity id="earch-orbit">
+          <a-sphere id="earth"
+            radius="0.5"
+            position="0 0 60"
+            color="blue"></a-sphere>
+        </a-entity>
+        <a-entity id="mars-orbit">
+          <a-sphere id="mars"
+            radius="0.25"
+            position="0 0 65"
+            color="red"></a-sphere>
+        </a-entity>
+        <a-entity id="jupiter-orbit">
+          <a-sphere id="jupiter"
+            radius="5.5"
+            position="0 0 80"
+            color="orange"></a-sphere>
+        </a-entity>
+        <a-entity id="saturn-orbit">
+          <a-sphere id="saturn"
+            radius="4.725"
+            position="0 0 100"
+            color="beige">
+            <a-ring id="saturns-rings"
+              color="brown"
+              radius-inner="5"
+              radius-outer="6">
+            </a-ring>
+          </a-sphere>
+        </a-entity>
+        <a-entity id="uranus-orbit">
+          <a-sphere id="uranus"
+            radius="2"
+            position="0 0 122"
+            color="cyan"></a-sphere>
+        </a-entity>
+        <a-entity id="nepture-orbit">
+          <a-sphere id="neptune"
+            radius="1.9"
+            position="0 0 140"
+            color="darkblue"></a-sphere>
+        </a-entity>
       </a-entity>
     </a-scene>
   </body>

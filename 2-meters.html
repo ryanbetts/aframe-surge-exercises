@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Lesson 2: Measuring in Meters</title>
-    <script src="https://aframe.io/releases/0.4.0/aframe.js"></script>
+    <script src="/assets/aframe-0.4.js"></script>
   </head>
   <body>
     <a-scene>
@@ -39,11 +39,14 @@
         We did this so that we could change it's default location in the scene.
         If you don't specify a camera, Aframe automatically places one at the
         location "0 0 0".
+
+        Note: This specific model, using the "collada" format, was downloaded
+        from the Sketchup 3D Warehouse: https://3dwarehouse.sketchup.com
         -->
         <a-collada-model
           id="football-player"
           src="assets/football-player/model.dae"
-          position="0 0 20"></a-collada-model>
+          position="0 0 0"></a-collada-model>
         <a-camera position="0 0 5"></a-camera>
       </a-entity>
     </a-scene>

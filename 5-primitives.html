@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Lesson 5: Primitives</title>
+    <script src="/assets/aframe-0.4.js"></script>
+    <script src="/assets/aframe-layout-component.js"></script>
+  </head>
+  <body>
+    <!--
+    Spend some time playing with properties of geometry and shape primitives.
+    For more information, check out the documentation:
+    https://aframe.io/docs/0.4.0/primitives
+
+    These shapes can be very useful for prototyping rough shapes and
+    layouts very quickly.
+    -->
+    <a-scene>
+      <a-entity position="0 0 -10">
+        <a-entity id="3d-geometries"
+          position="-12 3 0"
+          layout="type: line; margin: 3">
+          <a-box></a-box>
+          <a-sphere></a-sphere>
+          <a-cone></a-cone>
+          <a-cylinder></a-cylinder>
+          <a-dodecahedron></a-dodecahedron>
+          <a-isocahedron></a-isocahedron>
+          <a-octahedron></a-octahedron>
+          <a-tetrahedron></a-tetrahedron>
+          <a-torus-knot></a-torus-knot>
+          <a-torus></a-torus>
+        </a-entity>
+        <a-entity id="2d-shapes"
+          position="-3 0 0"
+          layout="type: line; margin: 3">
+          <a-ring></a-ring>
+          <a-circle></a-circle>
+          <a-plane></a-plane>
+        </a-entity>
+      </a-entity>
+      <!--
+      Bonus: what happens when you change the light properties?
+      https://aframe.io/docs/0.4.0/primitives/a-light.html
+      -->
+      <a-light color="black" type="ambient"/>
+    </a-scene>
+  </body>
+</html>

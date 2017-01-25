@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Lesson 8: Materials</title>
+    <script src="/assets/aframe-0.4.js"></script>
+  </head>
+  <body>
+    <!--
+      Materials are what give objects their appearance. Up until this point
+      all of the objects we've been using have had materials in them. When
+      we have changed the colour of an object, we have really been changing the
+      color of its material.
+
+      Think of the material as the skin or clothes of an object.
+
+      Look at the examples below: same object, same colour. But all three
+      of them look different.
+
+      Play with the properties of each to try and understand more about what
+      is going on.
+
+      Materials (as with lighting) are a very complex subject, so we won't
+      spend much time on them today.
+
+      BONUS: I've added an animation component to each torus so that you can
+      see how the materials respond to the light better. But now you see just
+      how easy it is to add an animation!
+    -->
+    <a-scene>
+      <a-torus
+        material="color: #EAEFF2;roughness: 0.1;metalness: 0.5;"
+        position="0 1 -4">
+          <a-animation attribute="rotation"
+               dur="10000"
+               to="0 360 0"
+               repeat="indefinite"></a-animation>
+      </a-torus>
+      <a-torus
+        material="color: #EAEFF2;opacity: 0.9;"
+        position="-4 1 -4">
+          <a-animation attribute="rotation"
+               dur="10000"
+               to="0 360 0"
+               repeat="indefinite"></a-animation>
+      </a-torus>
+      <a-torus
+        material="color: #EAEFF2; shader: flat; roughness: 0.1;metalness: 0.5;"
+        position="4 1 -4">
+          <a-animation attribute="rotation"
+               dur="10000"
+               to="0 360 0"
+               repeat="indefinite"></a-animation>
+      </a-torus>
+    </a-scene>
+  </body>
+</html>

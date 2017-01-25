@@ -1,10 +1,75 @@
 <html>
   <head>
     <title>Lesson 9: Text Component</title>
-    <script src="https://aframe.io/releases/0.4.0/aframe.js"></script>
+    <script src="/assets/aframe-0.4.js"></script>
+    <script src="/assets/aframe-text-component.js"></script>
+    <script src="/assets/aframe-bmfont-text-component.js"></script>
   </head>
   <body>
+    <!--
+      Show two approaches to text components.
+
+      The first creates a 3D geometry, and can have materials applied to it:
+      https://github.com/ngokevin/kframe/tree/master/components/text/
+
+      The second makes flat text, which can only have its color changed:
+      https://github.com/bryik/aframe-bmfont-text-component
+
+      Both methods have their pros and cons.
+    -->
     <a-scene>
+      <a-entity id="football-stadium">
+        <a-plane id="grass-field"
+          height="109.1"
+          width="48.5"
+          color="green"
+          position="0 -0.01 0"
+          rotation="-90 0 0"></a-plane>
+        <a-entity id="home-upright" position="0 0 -50">
+          <!--
+            This type of text is drawn as a geometry. This means each letter
+            is actually a 3D shape. As a result, you can do some neat stuff
+            with this text. The downside is that if you add a lot of text
+            this way it might slow down your scene.
+
+            Play with the properties in the inspector. Read more about them,
+            and what they do, here:
+            https://github.com/ngokevin/kframe/tree/master/components/text/
+          -->
+          <a-entity material="color:magenta" text="text: Home; size: 2" position="-3.5 10 0"></a-entity>
+          <a-plane color="magenta" width="5.64" height="0.3" position="0 3.05 0"></a-plane>
+          <a-plane color="magenta" width="0.3" height="6.1" position="-2.82 6.0 0"></a-plane>
+          <a-plane color="magenta" width="0.3" height="6.1" position="2.82 6.0 0"></a-plane>
+          <a-plane color="magenta" width="0.3" height="3.0" position="0 1.5 0"></a-plane>
+        </a-entity>
+        <a-plane id="center-field" color="white" height="0.5" width="48.5" rotation="-90 0 0"></a-plane>
+        <a-entity id="away-upright" position="0 0 50" rotation="0 180 0">
+          <a-entity material="color:cyan" text="text: Away; size: 2" position="-3.5 10 0"></a-entity>
+          <a-plane color="cyan" width="5.64" height="0.3" position="0 3.05 0"></a-plane>
+          <a-plane color="cyan" width="0.3" height="6.1" position="-2.82 6.0 0"></a-plane>
+          <a-plane color="cyan" width="0.3" height="6.1" position="2.82 6.0 0"></a-plane>
+          <a-plane color="cyan" width="0.3" height="3.0" position="0 1.5 0"></a-plane>
+        </a-entity>
+        <a-collada-model
+          id="football-player"
+          src="assets/football-player/model.dae"
+          position="0 0 0">
+          <!--
+            This type of text is drawn flat, as it would be on a webpage.
+            It has no depth. This type of text is the most practical and
+            efficient to add to a scene.
+
+            Play with the properties in the inspector. Read more about them,
+            and what they do, here:
+            https://github.com/bryik/aframe-bmfont-text-component
+          -->
+          <a-entity
+            id="player-name"
+            position="0 2 0"
+            bmfont-text="text: Johnson (QB)"></a-entity>
+        </a-collada-model>
+        <a-camera position="0 0 5"></a-camera>
+      </a-entity>
     </a-scene>
   </body>
 </html>

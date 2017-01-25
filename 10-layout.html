@@ -1,10 +1,35 @@
 <html>
   <head>
     <title>Lesson 10: Layout Component</title>
-    <script src="https://aframe.io/releases/0.4.0/aframe.js"></script>
+    <script src="/assets/aframe-0.4.js"></script>
+    <script src="/assets/aframe-layout-component.js"></script>
   </head>
   <body>
+    <!--
+      You may have noticed in lesson 5 on primitives, I used a `layout` component
+      to position the objects. This component is one of the many community written
+      components that is not core to Aframe, but that can really speed up your
+      prototyping.
+
+      You can read more about it here:
+      https://github.com/ngokevin/kframe/tree/master/components/layout/
+
+      Try to arrange the boxes into a "henge" formation around you. As in
+      Stonehenge.
+
+      BONUS: perform a druidic ritual in the henge.
+    -->
     <a-scene>
+      <a-entity layout="type: box; columns: 3; margin: 2" position="0 0 -4">
+        <a-box color="yellow"></a-box>
+        <a-box color="red"></a-box>
+        <a-box color="green"></a-box>
+        <a-box color="blue"></a-box>
+        <a-box color="pink"></a-box>
+        <a-box color="purple"></a-box>
+        <a-box color="cyan"></a-box>
+        <a-box color="magenta"></a-box>
+      </a-entity>
     </a-scene>
   </body>
 </html>
